@@ -1,17 +1,7 @@
 package main
 
-import (
-	"github.com/gin-gonic/gin"
-)
+import "github.com/br-jeff/go-lang-api/router"
 
 func main() {
-	router := gin.Default()
-
-	router.GET("/health", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "Server is runing",
-		})
-	})
-
-	router.Run()
+	router.Inititialzie()
 }
