@@ -10,6 +10,6 @@ RUN go mod download && go mod verify
 COPY . .
 
 RUN go build -o /usr/local/bin/app
-EXPOSE 8030
+EXPOSE 8080
 
 CMD [ "app" ]
