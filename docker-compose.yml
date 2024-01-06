@@ -1,0 +1,6 @@
+version: '3.4'
+
+services: 
+    go-api: 
+      build:
+        context: ./
