@@ -7,9 +7,11 @@ import (
 )
 
 func productRoutes(prefixRouter *gin.RouterGroup) {
-	prefixRouter.GET("/product", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"message": "this is Product get",
-		})
+	prefixRouter.GET("/product", getProductHandler)
+}
+
+func getProductHandler(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, gin.H{
+		"message": "this is Product get",
 	})
 }
