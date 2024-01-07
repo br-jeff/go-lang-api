@@ -1,17 +1,11 @@
 package apiv1
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+
+	"github.com/br-jeff/go-lang-api/handler"
 )
 
-func productRoutes(prefixRouter *gin.RouterGroup) {
-	prefixRouter.GET("/product", getProductHandler)
-}
-
-func getProductHandler(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"message": "this is Product get",
-	})
+func productRoutes(rg *gin.RouterGroup) {
+	rg.GET("/product", handler.GetProductHandler)
 }
