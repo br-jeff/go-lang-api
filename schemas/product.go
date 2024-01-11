@@ -4,6 +4,6 @@ import "gorm.io/gorm"
 
 type Product struct {
 	gorm.Model
-	name  string
-	price float32
+	Name  string
+	Price float32
 }

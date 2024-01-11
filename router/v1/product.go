@@ -8,4 +8,5 @@ import (
 
 func productRoutes(rg *gin.RouterGroup) {
 	rg.GET("/product", handler.GetProductHandler)
+	rg.POST("/product", handler.CreateProductHandler)
 }
