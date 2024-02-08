@@ -15,7 +15,7 @@ var (
 
 func InitHandler() {
 	logger = config.GetLogger("handler")
-	db = config.GetSqlite()
+	db = config.GetPG()
 }
 
 func errParamIsRequired(name, typ string) error {
