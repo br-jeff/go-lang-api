@@ -18,4 +18,6 @@ func NewViper() *viper.Viper {
 	if err != nil {
 		panic(fmt.Errorf("viper not loading error %w \n", err))
 	}
+
+	return settings
 }
