@@ -3,7 +3,7 @@ package apiv1
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/br-jeff/go-lang-api/handler"
+	"github.com/br-jeff/go-lang-api/web/handler"
 )
 
 func productRoutes(rg *gin.RouterGroup) {

@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/br-jeff/go-lang-api/config"
-	"github.com/br-jeff/go-lang-api/router"
+	"github.com/br-jeff/go-lang-api/web/router"
 )
 
 var (

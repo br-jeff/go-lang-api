@@ -13,8 +13,8 @@ var (
 	db     *gorm.DB
 )
 
-func InitHandler() {
-	logger = config.GetLogger("handler")
+func InitDatabase() {
+	logger = config.GetLogger("InitDb")
 	db = config.GetPG()
 }
 

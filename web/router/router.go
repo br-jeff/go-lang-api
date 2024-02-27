@@ -3,12 +3,12 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/br-jeff/go-lang-api/handler"
+	"github.com/br-jeff/go-lang-api/web/handler"
 )
 
 func Initialize() {
 	router := gin.Default()
-	handler.InitHandler()
-	startRoutes(router)
+	handler.InitDatabase()
+	bootstrap(router)
 	router.Run()
 }

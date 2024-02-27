@@ -4,6 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetRoutes(prefixRouter *gin.RouterGroup) {
+func BootstrapApiV1(prefixRouter *gin.RouterGroup) {
 	productRoutes(prefixRouter)
 }

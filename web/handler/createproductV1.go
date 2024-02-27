@@ -15,8 +15,6 @@ type CreateProductRequest struct {
 }
 
 func (r *CreateProductRequest) validate() error {
-	fmt.Printf("HERE MYYY %v %v", r.Name, r.Price)
-
 	if r.Name == "" && r.Price == 0 {
 
 		return fmt.Errorf("request body is empty or malformed")
