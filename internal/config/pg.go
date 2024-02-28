@@ -4,7 +4,7 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
-	"github.com/br-jeff/go-lang-api/schemas"
+	"github.com/br-jeff/go-lang-api/internal/models"
 )
 
 func InitializePG() (*gorm.DB, error) {
@@ -20,7 +20,7 @@ func InitializePG() (*gorm.DB, error) {
 		logger.Errorf("Erro when try to open PG: %v", err)
 	}
 
-	err = db.AutoMigrate(&schemas.Product{})
+	err = db.AutoMigrate(&models.Product{}, &models.User{})
 
 	if err != nil {
 		logger.Errorf("DB automagration error %v", err)
@@ -29,5 +29,3 @@ func InitializePG() (*gorm.DB, error) {
 
 	return db, nil
 }
-
-/* host=/tmp user=root database=dev`: dial error (dial unix /tmp/.s.PGSQL.5432: connect: no such file or directory */

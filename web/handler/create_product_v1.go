@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/br-jeff/go-lang-api/internal/schemas"
+	"github.com/br-jeff/go-lang-api/internal/models"
 )
 
 type CreateProductRequest struct {
@@ -38,7 +38,7 @@ func CreateProductHandler(ctx *gin.Context) {
 		sendError(ctx, http.StatusBadRequest, err.Error())
 	}
 
-	product := schemas.Product{
+	product := models.Product{
 		Name:  request.Name,
 		Price: request.Price,
 	}
