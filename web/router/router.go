@@ -8,7 +8,7 @@ import (
 
 func Initialize() {
 	router := gin.Default()
-	handler.InitDatabase()
+	handler.InitHandlers()
 	bootstrap(router)
 	router.Run()
 }
