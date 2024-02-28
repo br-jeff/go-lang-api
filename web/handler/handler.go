@@ -5,7 +5,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/br-jeff/go-lang-api/config"
+	"github.com/br-jeff/go-lang-api/internal/config"
 )
 
 var (

@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/br-jeff/go-lang-api/schemas"
+	"github.com/br-jeff/go-lang-api/internal/schemas"
 )
 
 type CreateProductRequest struct {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/br-jeff/go-lang-api/config"
+	"github.com/br-jeff/go-lang-api/internal/config"
 	"github.com/br-jeff/go-lang-api/web/router"
 )
 
