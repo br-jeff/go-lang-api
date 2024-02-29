@@ -1,8 +1,6 @@
 package handler
 
 import (
-	"fmt"
-
 	"gorm.io/gorm"
 
 	"github.com/br-jeff/go-lang-api/internal/config"
@@ -16,8 +14,4 @@ var (
 func InitHandlers() {
 	logger = config.GetLogger("Init")
 	db = config.GetPG()
-}
-
-func errParamIsRequired(name, typ string) error {
-	return fmt.Errorf("param: %s (type: %s) is required", name, typ)
 }

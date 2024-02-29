@@ -1,39 +1,20 @@
 package handler
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 
 	"github.com/br-jeff/go-lang-api/internal/models"
+	"github.com/br-jeff/go-lang-api/internal/schemas"
 )
 
-type CreateProductRequest struct {
-	Name  string  `json:"name"`
-	Price float32 `json:"price"`
-}
-
-func (r *CreateProductRequest) validate() error {
-	if r.Name == "" && r.Price == 0 {
-
-		return fmt.Errorf("request body is empty or malformed")
-	}
-	if r.Name == "" {
-		return errParamIsRequired("name", "string")
-	}
-	if r.Price == 0 {
-		return errParamIsRequired("name", "number")
-	}
-	return nil
-}
-
 func CreateProductHandler(ctx *gin.Context) {
-	request := CreateProductRequest{}
+	request := schemas.CreateProductRequest{}
 
 	ctx.BindJSON(request)
 
-	if err := request.validate(); err != nil {
+	if err := request.Validate(); err != nil {
 		logger.Errorf("validation error: %v", err.Error())
 		sendError(ctx, http.StatusBadRequest, err.Error())
 	}
