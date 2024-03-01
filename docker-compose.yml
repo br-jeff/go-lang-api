@@ -1,5 +1,12 @@
 version: '3.4'
 
+networks:
+  goNet: 
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.168.0.0/24
+
 services: 
     db:
       image: postgres
@@ -10,6 +17,9 @@ services:
         POSTGRES_USER: dev
         POSTGRES_DB: dev
         POSTGRES_PASSWORD: dev
+      networks:
+        goNet:
+          ipv4_address: 172.168.0.5
       volumes:
         - pgdata:/var/lib/postgresql/data
     go-api: 
@@ -20,6 +30,9 @@ services:
       environment:
         URL: localhost
         PORT: 8080
+      networks:
+        goNet:
+          ipv4_address: 172.168.0.6
       depends_on:
       - db
 
