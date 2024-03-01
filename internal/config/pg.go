@@ -12,7 +12,7 @@ func InitializePG() (*gorm.DB, error) {
 
 	db, err := gorm.Open(postgres.New(
 		postgres.Config{
-			DSN:                  "host=postgres user=dev password=dev dbname=dev port=5432 sslmode=disable",
+			DSN:                  "host=172.168.0.5 user=dev password=dev dbname=dev port=5432 sslmode=disable",
 			PreferSimpleProtocol: true,
 		}), &gorm.Config{})
 
