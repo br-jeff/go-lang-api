@@ -11,6 +11,11 @@ import (
 func ListProductHandler(ctx *gin.Context) {
 	products := models.Product{}
 	db.Find(&products)
+	if products.ID == 0 {
+		ctx.JSON(http.StatusNotFound, gin.H{"error": "Error not found"})
+		return
+	}
 	ctx.ShouldBindJSON(&products)
+
 	ctx.JSON(http.StatusOK, products)
 }
