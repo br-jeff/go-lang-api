@@ -11,7 +11,6 @@ type CreateProductRequest struct {
 
 func (r *CreateProductRequest) Validate() error {
 	if r.Name == "" && r.Price == 0 {
-
 		return fmt.Errorf("request body is empty or malformed")
 	}
 	if r.Name == "" {

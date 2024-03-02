@@ -12,7 +12,7 @@ import (
 func CreateProductHandler(ctx *gin.Context) {
 	request := schemas.CreateProductRequest{}
 
-	ctx.BindJSON(request)
+	ctx.BindJSON(&request)
 
 	if err := request.Validate(); err != nil {
 		logger.Errorf("validation error: %v", err.Error())
@@ -24,9 +24,9 @@ func CreateProductHandler(ctx *gin.Context) {
 		Price: request.Price,
 	}
 
-	logger.Infof("request recived", request)
+	logger.Infof("request recived", product)
 
-	if err := db.Create(&request).Error; err != nil {
+	if err := db.Create(&product).Error; err != nil {
 		logger.Errorf("erro on database: ", err.Error())
 		sendError(ctx, http.StatusInternalServerError, "Error on database")
 	}
